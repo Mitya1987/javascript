@@ -1,7 +1,9 @@
-const productName = "Генератор защитного поля";
-let productPrice = 1000;
-const messageFirstPrice = `Выбран «${productName}» , цена за штуку ${productPrice} кредитов`;
-console.log(messageFirstPrice);
-productPrice = 2000;
-const messageSecondPrice = `Выбран «${productName}» , цена за штуку ${productPrice} кредитов`;
-console.log(messageSecondPrice);
+const name = 'Генератор защитного поля';
+
+let price = 1000;
+
+console.log(`Выбран «${name}», цена за штуку ${price} кредитов`);
+
+price = 2000;
+
+console.log(`Выбран «${name}», цена за штуку ${price} кредитов`);

@@ -1,15 +1,23 @@
-const numbers = [];
+/*
+ * Math. Возведение в степень
+ */
 
-while (true) {
-  let input = +prompt("Введите число:");
-  numbers.push(input);
+// const buttonRef = document.querySelector('button');
+// buttonRef.addEventListener('click', function() {
+// ... тут получаем значение инпутов при клике
+//});
 
-  if (input == "" || input == null) {
-    let total = 0;
-    for (let i = 0; i < numbers.length; i++) {
-      total += numbers[i];
-    }
-    alert(`Общая сумма чисел равна ${total}`);
-    break;
-  }
-}
+const numberInputRef = document.querySelector('input[name="number"]');
+const powerInputRef = document.querySelector('input[name="power"]');
+const buttonRef = document.querySelector('button');
+
+buttonRef.addEventListener('click', function () {
+  console.log('numberInputRef.value: ', numberInputRef.value);
+  console.log('powerInputRef.value: ', powerInputRef.value);
+
+  const number = Number(numberInputRef.value);
+  const power = Number(powerInputRef.value);
+
+  const result = (number + power) / 2;
+  console.log(result);
+});

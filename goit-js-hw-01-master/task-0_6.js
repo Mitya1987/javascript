@@ -2,9 +2,10 @@ let input;
 let total = 0;
 
 while (true) {
-  input = prompt("Введите число");
+  let input = prompt('Введи число');
 
   if (input === null) {
+    alert('Отменено пользователем!');
     break;
   }
 
@@ -13,4 +14,4 @@ while (true) {
   total += input;
 }
 
-alert("Общая сумма чисел равна " + total);
+alert(`Общая сумма ${total}`);
