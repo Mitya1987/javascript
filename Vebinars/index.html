@@ -4,18 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>JavaScript is awesome!</title>
+    <title>Массивы</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <label>
-      Число
-      <input type="number" name="number" />
+      <input type="number" class="form-control js-value" />
     </label>
-    <label>
-      Степень
-      <input type="number" name="power" />
-    </label>
-    <button>Возвести</button>
+    <button type="button" class="btn btn-primary js-add-value">
+      Добавить в массив
+    </button>
+    <button type="button" class="btn btn-success js-calculate">
+      Посчитать сумму
+    </button>
+
+    <!-- Scripts -->
     <script src="app.js" type="module"></script>
+    <!-- <script src="./js/02-reference.js" type="module"></script> -->
+    <!-- <script src="./js/03-push.js" type="module"></script> -->
+    <!-- <script src="./js/04-split-join.js" type="module"></script> -->
+    <!-- <script src="./js/05-includes.js" type="module"></script> -->
+    <!-- <script src="./js/06-slice-splice.js" type="module"></script> -->
+    <!-- <script src="./js/07-concat.js" type="module"></script> -->
   </body>
 </html>

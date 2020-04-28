@@ -1,23 +1,68 @@
 /*
- * Math. Возведение в степень
+ * Псевдомассив arguments и Array.from и ...
  */
 
-// const buttonRef = document.querySelector('button');
-// buttonRef.addEventListener('click', function() {
-// ... тут получаем значение инпутов при клике
-//});
+// const fn = function () {
+//   console.log([]);
+//   console.log(arguments);
+// };
 
-const numberInputRef = document.querySelector('input[name="number"]');
-const powerInputRef = document.querySelector('input[name="power"]');
-const buttonRef = document.querySelector('button');
+// fn(1, 2, 3, 4, 5, 6, 7);
+// fn(55, 66, 88, 99);
 
-buttonRef.addEventListener('click', function () {
-  console.log('numberInputRef.value: ', numberInputRef.value);
-  console.log('powerInputRef.value: ', powerInputRef.value);
+/*
+ * Функция сложения произвольного количества элементов
+ */
 
-  const number = Number(numberInputRef.value);
-  const power = Number(powerInputRef.value);
+// const add = function() {
+//   const args = Array.from(arguments);
+//   console.log(arguments);
+//   console.log(args);
 
-  const result = (number + power) / 2;
-  console.log(result);
-});
+//   for (let i = 0; i < args.length; i += 1) {
+//     console.log(args[i]);
+//   }
+// };
+
+// const add = function(...args) {
+//   console.log(args);
+//   let total = 0;
+
+//   for (const arg of args) {
+//     total += arg;
+//   }
+
+//   return total;
+// };
+
+// console.log(add(1, 2, 3));
+
+// console.log(add(1, 2, 4, 5, 6));
+
+/*
+ * Функция прикрепления тега к строке
+ */
+// const posts = ['post-1', 'post-2', 'post-3', 'post-4'];
+// const tag = '#jqueryrules';
+
+// const postsWithTag = [];
+
+// for (const post of posts) {
+//   postsWithTag.push(`${post}${tag}`);
+// }
+
+// console.log(postsWithTag);
+
+// const addTag = function(tag, ...args) {
+//   const postsWithTag = [];
+
+//   for (const arg of args) {
+//     postsWithTag.push(`${arg}${tag}`);
+//   }
+
+//   return postsWithTag;
+// };
+
+// console.log(addTag('#jqueryrules', 'post-1', 'post-2'));
+// console.log(addTag('#react', 'post-1', 'post-2', 'post-3'));
+// console.log(addTag('#redux', 'post-1', 'post-2', 'post-3', 'post-4'));
