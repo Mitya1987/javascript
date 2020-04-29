@@ -1,68 +1,21 @@
-/*
- * Псевдомассив arguments и Array.from и ...
- */
+const text1 = 'Curabitur ligula sapien, tincidunt non.';
+const text2 = 'Vestibulum facilisis, purus nec pulvinar iaculis.';
+const text3 = 'Curabitur ligula sapien.';
+const text4 = 'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.';
 
-// const fn = function () {
-//   console.log([]);
-//   console.log(arguments);
-// };
+const formatString = function (string) {
+  if (string.length > 40) {
+    let arrayFromString = [];
+    for (let i = 0; i < 40; i += 1) {
+      console.log(string[i]);
+      arrayFromString += string[i];
+    }
+    return arrayFromString + '...';
+  }
+  return text1;
+};
 
-// fn(1, 2, 3, 4, 5, 6, 7);
-// fn(55, 66, 88, 99);
-
-/*
- * Функция сложения произвольного количества элементов
- */
-
-// const add = function() {
-//   const args = Array.from(arguments);
-//   console.log(arguments);
-//   console.log(args);
-
-//   for (let i = 0; i < args.length; i += 1) {
-//     console.log(args[i]);
-//   }
-// };
-
-// const add = function(...args) {
-//   console.log(args);
-//   let total = 0;
-
-//   for (const arg of args) {
-//     total += arg;
-//   }
-
-//   return total;
-// };
-
-// console.log(add(1, 2, 3));
-
-// console.log(add(1, 2, 4, 5, 6));
-
-/*
- * Функция прикрепления тега к строке
- */
-// const posts = ['post-1', 'post-2', 'post-3', 'post-4'];
-// const tag = '#jqueryrules';
-
-// const postsWithTag = [];
-
-// for (const post of posts) {
-//   postsWithTag.push(`${post}${tag}`);
-// }
-
-// console.log(postsWithTag);
-
-// const addTag = function(tag, ...args) {
-//   const postsWithTag = [];
-
-//   for (const arg of args) {
-//     postsWithTag.push(`${arg}${tag}`);
-//   }
-
-//   return postsWithTag;
-// };
-
-// console.log(addTag('#jqueryrules', 'post-1', 'post-2'));
-// console.log(addTag('#react', 'post-1', 'post-2', 'post-3'));
-// console.log(addTag('#redux', 'post-1', 'post-2', 'post-3', 'post-4'));
+console.log(formatString(text1));
+console.log(formatString(text2));
+console.log(formatString(text3));
+console.log(formatString(text4));

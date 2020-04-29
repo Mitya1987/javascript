@@ -1,6 +1,5 @@
 const formatString = function (string) {
-  let checkSize =
-    string.length <= 40 ? string : `${string.substr(-Infinity, 40)} ...`;
+  let checkSize = string.length <= 40 ? string : `${string.substr(0, 40)} ...`;
 
   return checkSize;
 };

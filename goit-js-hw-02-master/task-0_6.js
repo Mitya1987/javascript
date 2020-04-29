@@ -9,7 +9,11 @@ while (input !== null) {
 }
 
 for (const number of numbers) {
-  total += number;
+  if (number === 0) {
+    alert('Массив пуст');
+    break;
+  } else {
+    total += number;
+    console.log(`Общая сумма равна ${total}`);
+  }
 }
-
-console.log(total);
