@@ -5,15 +5,15 @@ let total = 0;
 while (input !== null) {
   input = prompt('Введите число');
   const changeType = Number(input);
-  numbers.push(changeType);
+  if (changeType >= 0) {
+    numbers.push(changeType);
+  }
 }
 
 for (const number of numbers) {
-  if (number === 0) {
-    alert('Массив пуст');
-    break;
-  } else {
+  if (numbers.length > 0) {
     total += number;
-    console.log(`Общая сумма равна ${total}`);
   }
 }
+
+console.log(`Общая сумма равна ${total}`);
