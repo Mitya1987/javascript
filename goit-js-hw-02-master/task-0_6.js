@@ -10,12 +10,12 @@ while (input !== null) {
   }
 }
 
-for (const number of numbers) {
-  if (numbers.length > 0) {
+if (numbers.length > 0) {
+  for (const number of numbers) {
     total += number;
-  } else {
-    alert('Массив пуст'); //Не работает не могу понять почему?
   }
+} else {
+  alert('Массив пуст');
 }
 
 console.log(`Общая сумма равна ${total}`);
