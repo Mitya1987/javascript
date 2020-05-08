@@ -5,6 +5,7 @@ const findBestEmployee = function (employees) {
   let theMostProductive = allTasks[0][1];
   for (let i = 0; i < allTasks.length; i += 1) {
     if (allTasks[i][1] >= theMostProductive) {
+      theMostProductive = allTasks[i][1];
       findProductive = allTasks[i][0];
     }
   }
