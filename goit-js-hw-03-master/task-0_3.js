@@ -1,18 +1,15 @@
 const findBestEmployee = function (employees) {
-  let findProductive;
-  const allTasks = Object.entries(employees);
-
-  let theMostProductive = allTasks[0][1];
-  for (let i = 0; i < allTasks.length; i += 1) {
-    if (allTasks[i][1] >= theMostProductive) {
-      theMostProductive = allTasks[i][1];
-      findProductive = allTasks[i][0];
+  const keys = Object.keys(employees);
+  let theMost = employees[keys[0]];
+  let findEmpoloyee;
+  for (let i = 0; i < keys.length; i += 1) {
+    if (employees[keys[i]] >= theMost) {
+      theMost = employees[keys[i]];
+      findEmpoloyee = keys[i];
     }
   }
-
-  return findProductive;
+  return findEmpoloyee;
 };
-
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
@@ -41,12 +38,3 @@ console.log(
     chelsy: 38,
   }),
 ); // Lux
-
-//     const allTasks = Object.values(employees);
-//   let theMostProductive = allTasks[0];
-//   for (let i = 1; i < allTasks.length; i += 1) {
-//     if (allTasks[i] > theMostProductive) {
-//       theMostProductive = allTasks[i];
-//     }
-//   }
-//   return theMostProductive;
