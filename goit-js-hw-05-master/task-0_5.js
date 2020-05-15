@@ -25,6 +25,13 @@ class Car {
     this.car.distance = 0;
   }
 
+  get price() {
+    return this.car.price;
+  }
+
+  set price(price) {
+    this.car.price = price;
+  }
   /*
    * Добавь геттер и сеттер для свойства price,
    * который будет работать с свойством цены автомобиля.
@@ -34,33 +41,50 @@ class Car {
    * Добавь код для того чтобы завести автомобиль
    * Записывает в свойство isOn значение true
    */
-  turnOn() {}
+  turnOn() {
+    this.car.isOn = true;
+  }
 
   /*
    * Добавь код для того чтобы заглушить автомобиль
    * Записывает в свойство isOn значение false,
    * и сбрасывает текущую скорость в 0
    */
-  turnOff() {}
+  turnOff() {
+    this.car.isOn = false;
+    this.car.speed = 0;
+  }
 
   /*
    * Добавялет к свойству speed полученное значение,
    * при условии что результирующая скорость
    * не больше чем значение свойства maxSpeed
    */
-  accelerate(value) {}
+  accelerate(value) {
+    if (this.car.speed < this.car.maxSpeed) {
+      this.car.speed += value;
+    }
+  }
 
   /*
    * Отнимает от свойства speed полученное значение,
    * при условии что результирующая скорость не меньше нуля
    */
-  decelerate(value) {}
+  decelerate(value) {
+    if (this.car.speed < 0) {
+      this.car.speed -= value;
+    }
+  }
 
   /*
    * Добавляет в поле distance киллометраж (hours * speed),
    * но только в том случае если машина заведена!
    */
-  drive(hours) {}
+  drive(hours) {
+    if (this.car.isOn) {
+      this.car.distance = hours * this.car.speed;
+    }
+  }
 }
 
 const mustang = new Car({ maxSpeed: 200, price: 2000 });
