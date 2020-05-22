@@ -2,22 +2,7 @@ class Car {
   static getSpecs(car) {
     console.log(Object.values(car.car));
   }
-  /*
-   * Добавь статический метод `getSpecs(car)`,
-   * который принимает объект-машину как параметр и выводит
-   * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
-   */
 
-  /*
-   * Конструктор получает объект настроек.
-   *
-   * Добавь свойства будущеего экземпляра класса:
-   *  speed - текущая скорость, изначально 0
-   *  price - цена автомобиля
-   *  maxSpeed - максимальная скорость
-   *  isOn - заведен ли автомобиль, значения true или false. Изначально false
-   *  distance - общий киллометраж, изначально 0
-   */
   constructor(car) {
     this.car = car;
     this.car.speed = 0;
@@ -32,54 +17,28 @@ class Car {
   set price(price) {
     this.car.price = price;
   }
-  /*
-   * Добавь геттер и сеттер для свойства price,
-   * который будет работать с свойством цены автомобиля.
-   */
 
-  /*
-   * Добавь код для того чтобы завести автомобиль
-   * Записывает в свойство isOn значение true
-   */
   turnOn() {
     this.car.isOn = true;
   }
 
-  /*
-   * Добавь код для того чтобы заглушить автомобиль
-   * Записывает в свойство isOn значение false,
-   * и сбрасывает текущую скорость в 0
-   */
   turnOff() {
     this.car.isOn = false;
     this.car.speed = 0;
   }
 
-  /*
-   * Добавялет к свойству speed полученное значение,
-   * при условии что результирующая скорость
-   * не больше чем значение свойства maxSpeed
-   */
   accelerate(value) {
-    if (this.car.speed < this.car.maxSpeed) {
+    if (this.car.speed + value <= this.car.maxSpeed) {
       this.car.speed += value;
     }
   }
 
-  /*
-   * Отнимает от свойства speed полученное значение,
-   * при условии что результирующая скорость не меньше нуля
-   */
   decelerate(value) {
-    if (this.car.speed < 0) {
+    if (this.car.speed + value >= 0) {
       this.car.speed -= value;
     }
   }
 
-  /*
-   * Добавляет в поле distance киллометраж (hours * speed),
-   * но только в том случае если машина заведена!
-   */
   drive(hours) {
     if (this.car.isOn) {
       this.car.distance = hours * this.car.speed;
