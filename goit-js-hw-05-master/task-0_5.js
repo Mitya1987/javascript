@@ -1,47 +1,48 @@
 class Car {
   static getSpecs(car) {
-    console.log(Object.values(car.car));
+    console.log(Object.values(car));
   }
 
-  constructor(car) {
-    this.car = car;
-    this.car.speed = 0;
-    this.car.isOn = false;
-    this.car.distance = 0;
+  constructor({ price, maxSpeed }) {
+    this.speed = 0;
+    this._price = price;
+    this.maxSpeed = maxSpeed;
+    this.isOn = false;
+    this.distance = 0;
   }
 
   get price() {
-    return this.car.price;
+    return this._price;
   }
 
   set price(price) {
-    this.car.price = price;
+    this._price = price;
   }
 
   turnOn() {
-    this.car.isOn = true;
+    this.isOn = true;
   }
 
   turnOff() {
-    this.car.isOn = false;
-    this.car.speed = 0;
+    this.isOn = false;
+    this.speed = 0;
   }
 
   accelerate(value) {
-    if (this.car.speed + value <= this.car.maxSpeed) {
-      this.car.speed += value;
+    if (this.speed + value <= this.maxSpeed) {
+      this.speed += value;
     }
   }
 
   decelerate(value) {
-    if (this.car.speed + value >= 0) {
-      this.car.speed -= value;
+    if (this.speed + value >= 0) {
+      this.speed -= value;
     }
   }
 
   drive(hours) {
-    if (this.car.isOn) {
-      this.car.distance = hours * this.car.speed;
+    if (this.isOn) {
+      this.distance += hours * this.speed;
     }
   }
 }
